@@ -53,7 +53,7 @@ namespace API
                  if (env == "Development")
                  {
                      // Use connection string from file.
-                     connStr = config.GetConnectionString("DefaultConnection");
+                     connStr = Configuration.GetConnectionString("DefaultConnection");
                  }
                  else
                  {
