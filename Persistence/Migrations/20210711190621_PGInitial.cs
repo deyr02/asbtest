@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class PGInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,11 @@ namespace Persistence.Migrations
                 name: "CreditCards",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: true),
-                    CardNumber = table.Column<int>(type: "INTEGER", nullable: false),
-                    CVC = table.Column<int>(type: "INTEGER", nullable: false),
-                    Expiry = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    CardNumber = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
+                    CVC = table.Column<int>(type: "integer", nullable: false),
+                    Expiry = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
